@@ -30,8 +30,17 @@ class ViewController: UIViewController {
         lblPickerTime.text = "선택시간: " + formatter.string(from : datePickerView.date)
     }
     @objc func updateTime() {
-        lblCurrentTime.text = String(count)
-        count = count + 1
+        //lblCurrentTime.text = String(count)
+        //count = count + 1
+        //현재 시간을 가져온다.
+        let date = NSDate()
+        
+        //날짜를 출력하기 위해 선언
+        let formatter = DateFormatter()
+        
+        //날짜 형식 지정
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss EEE"
+        lblCurrentTime.text = "현재시간 : " + formatter.string(from: date as Date)
     }
 }
 
